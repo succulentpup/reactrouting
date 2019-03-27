@@ -23,8 +23,8 @@ class Posts extends Component {
                 // console.log( response );
             })
             .catch(error => {
-                // console.log(error);
-                this.setState({error: true});
+                 console.log(error);
+                //this.setState({error: true});
             });
     }
 

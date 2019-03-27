@@ -8,7 +8,7 @@ class NewPost extends Component {
         title: '',
         content: '',
         author: 'Max'
-    }
+    };
 
     postDataHandler = () => {
         const data = {
@@ -20,7 +20,7 @@ class NewPost extends Component {
             .then(response => {
                 console.log(response);
             });
-    }
+    };
 
     render () {
         return (

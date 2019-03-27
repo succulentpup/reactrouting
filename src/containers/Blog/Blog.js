@@ -1,27 +1,36 @@
-import React, { Component } from 'react';
-import {Route} from "react-router-dom";
+import React, {Component} from 'react';
+import {Route, Link} from "react-router-dom";
 
 import './Blog.css';
 import Posts from "../Posts/Posts";
 import NewPost from "../NewPost/NewPost";
 
 class Blog extends Component {
-    render () {
+    render() {
         return (
             <div>
                 <header className="Blog">
                     <nav>
                         <ul>
                             <li>
-                                <a href={"/"}>Posts</a>
-                                <a href={"/newpost"}>New Post</a>
+                                <Link to="/">Posts</Link>
+                            </li>
+                            <li>
+                                <Link to={{
+                                    pathname: "/newpost",
+                                    search: '?'
+                                }}>New Post</Link>
                             </li>
                         </ul>
                     </nav>
                 </header>
-                {/*<Route path="/" exact render={()=> <h1>Home</h1>}/>*/}
+                {/*<Route path="/" exact render={()=> <h1>Home</h1>}/>*/
+                }
                 <Route path="/" exact component={Posts}/>
-                <Route path="/newpost" component={NewPost}/>
+                < Route
+                    path="/newpost"
+                    component={NewPost}
+                />
             </div>
         );
     }

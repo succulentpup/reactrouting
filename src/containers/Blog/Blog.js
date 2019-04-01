@@ -8,6 +8,10 @@ import NewPost from "../NewPost/NewPost";
 // import FullPost from "../FullPost/FullPost";
 
 class Blog extends Component {
+    state = {
+        auth: false
+    };
+
     render() {
         return (
             <div>
@@ -35,10 +39,11 @@ class Blog extends Component {
                 {/*<Route path="/" exact render={()=> <h1>Home</h1>}/>*/
                 }
                 <Switch>
-                    < Route
-                        path="/newpost"
-                        component={NewPost}
-                    />
+                    {this.state.auth ?
+                        < Route
+                            path="/newpost"
+                            component={NewPost}
+                        /> : <Redirect to="/" from="/newpost"/>}
                     <Redirect to="/" from="/posts"/>
                     <Route path="/" component={Posts}/>
                     {/*<Route path="/:postId" exact component={FullPost}/>*/}
